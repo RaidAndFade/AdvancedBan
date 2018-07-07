@@ -17,6 +17,7 @@ public class DatabaseManager {
     private String dbName;
     private String usrName;
     private String password;
+    private String prefix;
     private int port = 3306;
     private Connection connection;
     private boolean failedMySQL = false;
@@ -54,6 +55,7 @@ public class DatabaseManager {
                 usrName = mi.getString(mi.getMySQLFile(), "MySQL.Username", "Unknown");
                 password = mi.getString(mi.getMySQLFile(), "MySQL.Password", "Unknown");
                 port = mi.getInteger(mi.getMySQLFile(), "MySQL.Port", 3306);
+                prefix = mi.getString(mi.getMySQLFile(), "MySQL.Prefix", ""); //empty string as default for backwards compat.
 
                 connectMySQLServer();
             }
