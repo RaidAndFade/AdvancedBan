@@ -256,6 +256,7 @@ public class BukkitMethods implements MethodInterface {
         mysql.set("MySQL.Username", "root");
         mysql.set("MySQL.Password", "pw123");
         mysql.set("MySQL.Port", 3306);
+        mysql.set("MySQL.Prefix", "AB_");
         try {
             mysql.save(f);
         } catch (IOException e) {
